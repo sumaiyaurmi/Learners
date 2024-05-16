@@ -21,7 +21,7 @@ const Navbar = () => {
       </ul>
     </div>
    <div className='flex gap-1 items-center'>
-    <img src="https://i.postimg.cc/1z26dS9m/O7DCE10.jpg" className='w-16' alt="" />
+    <img src="https://i.postimg.cc/1z26dS9m/O7DCE10.jpg" className='w-14' alt="" />
 <p className='text-2xl font-medium'><span className='text-4xl font-semibold text-amber-500'>L</span>earners</p> 
   </div>
   </div>
