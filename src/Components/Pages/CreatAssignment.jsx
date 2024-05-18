@@ -5,11 +5,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import useAxios from "../UseHooks/useAxios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const CreatAssignment = () => {
   const [startDate, setStartDate] = useState(new Date());
   const axiosSecure = useAxios();
-
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
   const handleCreateAssignment = async (e) => {
@@ -21,7 +22,6 @@ const CreatAssignment = () => {
     const image = form.image.value;
     const level = form.level.value;
     const deadline = startDate;
-
 
     const assignmentData = {
       title,
@@ -39,19 +39,18 @@ const CreatAssignment = () => {
     console.log(assignmentData);
 
     try {
-      const { data } = await axiosSecure.post(
-        `/assignments`,
-        assignmentData
-      );
+      const { data } = await axiosSecure.post(`/assignments`, assignmentData);
       console.log(data);
       toast.success("successfully Created Assignment ");
-      // navigate('/posted-jobs')
+      navigate("/assignments");
     } catch (err) {
       console.log(err);
       toast.error(`${err.message}`);
     }
   };
 
+
+  
   return (
     <form
       onSubmit={handleCreateAssignment}

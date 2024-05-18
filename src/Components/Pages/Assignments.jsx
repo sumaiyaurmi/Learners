@@ -29,6 +29,8 @@ const Assignments = () => {
         {assignments.map((assignment) => (
           <AssignmentCard
             key={assignment._id}
+            setAssignments={setAssignments}
+assignments={assignments}
             assignment={assignment}
           ></AssignmentCard>
         ))}
