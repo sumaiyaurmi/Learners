@@ -5,7 +5,7 @@ const AssignmentCard = ({ assignment }) => {
     assignment;
 
   return (
-    <div className="card flex gap-2 items-center justify-center card-side bg-base-100 shadow-xl">
+    <div className="card transition hover:-translate-y-1 delay-150 duration-300  hover:scale-110 flex gap-2 items-center justify-center card-side bg-base-100 shadow-xl">
       <div className="space-y-3 w-1/2">
       <img src={thumbnail} className="rounded-xl w-[200px] h-[150px] " alt="Movie" />
 
