@@ -1,7 +1,7 @@
 import React from "react";
 
 const AssignmentCard = ({ assignment }) => {
-  const { _id, title, thumbnail, description, difficulty, marks, due_date } =
+  const { _id, title, thumbnail, description, level, marks, due_date } =
     assignment;
 
   return (
@@ -21,7 +21,7 @@ const AssignmentCard = ({ assignment }) => {
         <h2 className="card-title">{title}</h2>
         <p className="text-slate-500">{description}</p>
         <button className="py-1  border bg-green-300 rounded-full"> <span className="font-bold">mark:</span> {marks}</button>
-          <button className="py-1  border bg-amber-300 rounded-full"><span className="font-bold">Level:</span> {difficulty}</button>
+          <button className="py-1  border bg-amber-300 rounded-full"><span className="font-bold">Level:</span> {level}</button>
         
         
       </div>

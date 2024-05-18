@@ -19,7 +19,7 @@ const Assignments = () => {
     <div>
         <div>
   <select name="category" id="category" className="border-amber-500 border p-2 rounded-lg">
-    {/* <option value="">Difficulty Level</option> */}
+  {/* <option value="" disabled  defaultValue={}>Difficulty Level</option> */}
     <option value="easy">Easy</option>
     <option value="medium">Medium</option>
     <option value="hard">Hard</option>
