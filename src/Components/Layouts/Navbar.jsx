@@ -23,6 +23,10 @@ const Navbar = () => {
     const links=<>
     <li><NavLink to={'/'}>Home</NavLink></li>
     <li><NavLink to={'/assignment'}>Assignments</NavLink></li>
+    {user?.email && <>
+      <li><NavLink to={'/create-assignment'}> Create Assignments</NavLink></li>
+      <li><NavLink to={'/pending-assignment'}>pending  Assignments</NavLink></li>
+    </>}
 
     </>
 
@@ -49,7 +53,37 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
 {
-  user?.email ? <button onClick={handleLogOut} className='btn'>Log Out</button>:<Link to={'/login'}><button className='btn hover:text-amber-500 hover:bg-slate-700'>Login</button></Link>
+  user?.email ? 
+<div className="dropdown dropdown-end z-50">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-10 rounded-full" title={user?.displayName}>
+                <img
+                  referrerPolicy="no-referrer"
+                  alt="User Profile Photo"
+                  src={user?.photoURL}
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+             
+              <li>
+                <Link to={'/attempted-assignment'}> My Attempted Assignments</Link>
+              </li>
+              <li className="mt-2">
+                
+                <button onClick={handleLogOut} className="bg-gray-200 block text-center">
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>  :<Link to={'/login'}><button className='btn hover:text-amber-500 hover:bg-slate-700'>Login</button></Link>
  
 }
  
