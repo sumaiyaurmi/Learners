@@ -19,13 +19,13 @@ const Banner = () => {
             </h2>
             <p>Empower Your Learning Community with Collaborative Study!</p>
            <div className="pt-4"> <Link to={"/login"}>
-              <button className="btn mr-4 px-6 hover:text-amber-500 hover:bg-slate-700 border-0 ">
+              <button className="btn mr-4 px-6 hover:text-amber-500 hover:bg-slate-700 border-2  border-amber-500 ">
                 {" "}
                 Login
               </button>
             </Link>
             <Link to={"/signUp"}>
-              <button className="btn hover:text-amber-500 hover:bg-slate-700 border-0 ">
+              <button className="btn hover:text-amber-500 hover:bg-slate-700  border-amber-500 border-2">
                 {" "}
                 Sign Up
               </button>

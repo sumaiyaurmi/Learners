@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import  { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
@@ -22,7 +22,7 @@ const Navbar = () => {
 
     const links=<>
     <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/assignment'}>Assignments</NavLink></li>
+    <li><NavLink to={'/assignments'}>Assignments</NavLink></li>
     {user?.email && <>
       <li><NavLink to={'/create-assignment'}> Create Assignments</NavLink></li>
       <li><NavLink to={'/pending-assignment'}>pending  Assignments</NavLink></li>
@@ -83,7 +83,7 @@ const Navbar = () => {
                 </button>
               </li>
             </ul>
-          </div>  :<Link to={'/login'}><button className='btn hover:text-amber-500 hover:bg-slate-700'>Login</button></Link>
+          </div>  :<Link to={'/login'}><button className='btn hover:text-amber-500 hover:bg-slate-700 border-amber-500'>Login</button></Link>
  
 }
  
