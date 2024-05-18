@@ -1,13 +1,25 @@
+import { useContext } from "react";
 import useAxios from "../UseHooks/useAxios";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import toast from "react-hot-toast/headless";
 
 const AssignmentCard = ({ assignment ,assignments,setAssignments}) => {
-  const { _id, title, image, description, level, marks, deadline } =
-    assignment;
+  const { _id, title, image, description, level, marks, deadline,creator } =assignment;
     const axiosSecure = useAxios();
+const {user}=useContext(AuthContext)
 
 
     const handleDelete= id=>{
+      if(creator?.email === user?.email) return (
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          
+        })
+      );
+
       Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -30,7 +42,6 @@ const AssignmentCard = ({ assignment ,assignments,setAssignments}) => {
           });
         }
       });
-      
       
         }
 

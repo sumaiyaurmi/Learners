@@ -7,6 +7,7 @@ import Login from "../Components/Pages/Login";
 import SignUp from "../Components/Pages/SignUp";
 import Assignments from "../Components/Pages/Assignments";
 import CreatAssignment from "../Components/Pages/CreatAssignment";
+import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
 
 export  const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ export  const router = createBrowserRouter([
         },
         {
             path:'/create-assignment',
-            element:<CreatAssignment></CreatAssignment>
+            element:<PrivateRoute><CreatAssignment></CreatAssignment></PrivateRoute>
         },
         {
             path:'/login',
