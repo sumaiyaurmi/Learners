@@ -2,7 +2,7 @@ import { useContext } from "react";
 import useAxios from "../UseHooks/useAxios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
-import toast from "react-hot-toast/headless";
+import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment ,assignments,setAssignments}) => {
   const { _id, title, image, description, level, marks, deadline,creator } =assignment;
@@ -51,7 +51,7 @@ const {user}=useContext(AuthContext)
       <img src={image} className="rounded-xl w-[200px] h-[150px] " alt="Movie" />
 
         <div className=" flex  w-full justify-evenly py-2">
-          <button className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Update</button>
+          <Link to={`/assignments/${_id}`}><button className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Update</button></Link>
           <button onClick={()=>handleDelete(_id)} className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Delete</button>
         </div>
         <div>
