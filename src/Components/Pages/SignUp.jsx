@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
@@ -7,6 +7,8 @@ const Registration = () => {
 
   const {user, setUser, createUser, signInWithGoogle, updateUserProfile }=useContext(AuthContext)
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state || "/";
 
 
   const handleSignUp=async (e)=>{
@@ -27,7 +29,7 @@ const Registration = () => {
       await updateUserProfile(name, image);
       // Optimistic Ui Update
       setUser({ ...result?.user, photoURL: image, displayName: name });
-      navigate("/");
+      navigate(from);
       toast.success("Sign In Successfully");
     } catch (err) {
       console.log(err.message);
@@ -42,7 +44,7 @@ const Registration = () => {
     console.log(result.user);
     
     toast.success("Sign In Successfully");
-    navigate("/");
+    navigate(from);
   } catch (err) {
     console.log(err);
     toast.error(err?.message);

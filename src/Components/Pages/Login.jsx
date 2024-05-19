@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -7,6 +7,8 @@ const Login = () => {
 
   const { signIn, signInWithGoogle, user,  } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state || "/";
 
    // handle email register
    const handlelogin = async (e) => {
@@ -20,7 +22,8 @@ const Login = () => {
     try {
       const result = await signIn(email, pass);
       console.log(result.user);
-     
+      navigate(from);
+
       toast.success("Sign In Successfully");
     } catch (err) {
       console.log(err.message);
@@ -36,7 +39,7 @@ const Login = () => {
     console.log(result.user);
    
     toast.success("Sign In Successfully");
-    navigate("/");
+    navigate(from);
   } catch (err) {
     console.log(err);
     toast.error(err?.message);

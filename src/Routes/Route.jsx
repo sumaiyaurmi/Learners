@@ -31,7 +31,7 @@ export  const router = createBrowserRouter([
         },
         {
             path:'/assignments/:id',
-            element:<ViewDetails></ViewDetails>,
+            element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
             loader:({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
         },
         
