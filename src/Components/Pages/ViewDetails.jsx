@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const card = useLoaderData();
@@ -39,12 +39,12 @@ const ViewDetails = () => {
      </div>
     </div>
     <div>
-    <button
+   <Link to={`/submission-form/${_id}`}> <button
         type="submit"
         className="btn my-4 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
       >
         Take Assignment
-      </button>
+      </button></Link>
     </div>
  </div>
   );

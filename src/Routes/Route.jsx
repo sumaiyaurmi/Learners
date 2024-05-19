@@ -10,6 +10,7 @@ import CreatAssignment from "../Components/Pages/CreatAssignment";
 import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
 import Update from "../Components/Pages/Update";
 import ViewDetails from "../Components/Pages/ViewDetails";
+import SubmissionForm from "../Components/Pages/SubmissionForm";
 
 export  const router = createBrowserRouter([
     {
@@ -47,6 +48,12 @@ export  const router = createBrowserRouter([
             path:'/signUp',
             element:<SignUp></SignUp>
         },
+        {
+          path:'/submission-form/:id',
+          element:<SubmissionForm></SubmissionForm>,
+          loader:({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
+
+      },
       ])
     },
   ]);
