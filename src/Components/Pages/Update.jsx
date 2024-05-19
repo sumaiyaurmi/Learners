@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Update = () => {
 
     const card=useLoaderData()
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(new Date(card.deadline));
     const axiosSecure = useAxios();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -146,6 +146,7 @@ const Update = () => {
         <DatePicker
           className="p-2 border w-full rounded-lg"
           name="date"
+          defaultValue={card.deadline}
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
@@ -157,7 +158,7 @@ const Update = () => {
         type="submit"
         className="btn mt-6 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
       >
-        Update
+        Update Assignment
       </button>
     </div>
   </form>

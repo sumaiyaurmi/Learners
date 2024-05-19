@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const CreatAssignment = () => {
-  
+
   const [startDate, setStartDate] = useState(new Date());
   const axiosSecure = useAxios();
   const navigate = useNavigate();
@@ -151,7 +151,7 @@ const CreatAssignment = () => {
           type="submit"
           className="btn mt-6 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
         >
-          Create
+          Create Assignment
         </button>
       </div>
     </form>

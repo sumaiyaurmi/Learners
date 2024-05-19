@@ -51,11 +51,11 @@ const {user}=useContext(AuthContext)
       <img src={image} className="rounded-xl w-[200px] h-[150px] " alt="Movie" />
 
         <div className=" flex  w-full justify-evenly py-2">
-          <Link to={`/assignments/${_id}`}><button className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Update</button></Link>
+          <Link to={`/assignments-update/${_id}`}><button className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Update</button></Link>
           <button onClick={()=>handleDelete(_id)} className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">Delete</button>
         </div>
         <div>
-          <button className="w-full mr-10 btn hover:text-amber-500 hover:bg-slate-700 border-amber-500"> View Assignment</button>
+       <Link to={`/assignments/${_id}`}>   <button className="w-full mr-10 btn hover:text-amber-500 hover:bg-slate-700 border-amber-500"> View Assignment</button></Link>
         </div>
       </div>
       <div className="card-body space-y-3 w-1/2">
