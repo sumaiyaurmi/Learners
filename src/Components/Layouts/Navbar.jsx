@@ -43,7 +43,7 @@ const Navbar = () => {
     </div>
    <div className='flex gap-1 items-center'>
     <img src="https://i.postimg.cc/1z26dS9m/O7DCE10.jpg" className='w-14' alt="" />
-<p className='text-2xl font-medium'><span className='text-4xl font-semibold text-amber-500'>L</span>earners</p> 
+<p className='text-2xl font-medium'><span className='text-3xl md:text-4xl font-semibold text-amber-500'>L</span>earners</p> 
   </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -74,7 +74,7 @@ const Navbar = () => {
             >
              
               <li>
-                <Link to={'/attempted-assignment'}> My Attempted Assignments</Link>
+                <Link to={'/my-assignment'}> My Assignments</Link>
               </li>
               <li className="mt-2">
                 

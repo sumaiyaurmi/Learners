@@ -32,9 +32,11 @@ const ViewDetails = () => {
         </p>
 <div >
 <h4 className="font-extrabold text-lg md:text-left">Creator:</h4>
+<div className="flex flex-col  items-start">
 <p><span className="font-semibold">Name:  </span> {creator.email}</p>
 <p><span className="font-semibold">Email:</span> {creator.name}</p>
 
+</div>
     </div> 
      </div>
     </div>

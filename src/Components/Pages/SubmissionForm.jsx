@@ -1,22 +1,24 @@
-import React, { useContext } from "react";
-import { Form, useLoaderData } from "react-router-dom";
+import  { useContext } from "react";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import useAxios from "../UseHooks/useAxios";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const SubmissionForm = () => {
-  const form = useLoaderData();
+  const cardData = useLoaderData();
   const { _id, title, image, description, level, marks, deadline, creator } =
-    form;
+    cardData;
   const axiosSecure = useAxios();
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+const form=e.target
     const pdf = e.target.pdf.value;
     const note = e.target.note.value;
     const email = user?.email;
+    const name=user?.displayName;
     const status='pending';
     const submissionData = {
       title,
@@ -30,13 +32,15 @@ const SubmissionForm = () => {
       note,
       status,
       email,
+      name
     };
 
     try {
         const { data } = await axiosSecure.post(`/submissions`, submissionData);
         console.log(data);
         toast.success("successfully Submitted Assignment ");
-        // navigate("/assignments");
+        navigate("/my-assignment");
+        form.reset('')
       } catch (err) {
         console.log(err);
         toast.error(`${err.message}`);
