@@ -18,7 +18,7 @@ const CreatAssignment = () => {
     const form = e.target;
     const title = form.title.value;
     const description = form.description.value;
-    const marks = form.mark.value;
+    const marks = parseInt(form.mark.value);
     const image = form.image.value;
     const level = form.level.value;
     const deadline = startDate;
@@ -54,7 +54,7 @@ const CreatAssignment = () => {
   return (
     <form
       onSubmit={handleCreateAssignment}
-      className=" my-8 bg-slate-200 p-4 rounded-2xl border-amber-500 border"
+      className=" my-8 bg-slate-200 p-4 min-h-screen rounded-2xl border-amber-500 border"
     >
       {/* 1st row */}
       <div className="grid grid-cols-2  gap-6">
@@ -149,7 +149,7 @@ const CreatAssignment = () => {
       <div>
         <button
           type="submit"
-          className="btn mt-6 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
+          className="btn mt-16 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
         >
           Create Assignment
         </button>

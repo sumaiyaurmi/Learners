@@ -19,6 +19,9 @@ const form=e.target
     const note = e.target.note.value;
     const email = user?.email;
     const name=user?.displayName;
+const myMark="Haven't got it yet";
+const feedback="Haven't got it yet";
+
     const status='pending';
     const submissionData = {
       title,
@@ -26,6 +29,8 @@ const form=e.target
       description,
       level,
       marks,
+      myMark,
+      feedback,
       deadline,
       creator,
       pdf,
@@ -49,8 +54,8 @@ const form=e.target
   };
 
   return (
-    <div className="text-center">
-      <form className="my-6 bg-slate-200 p-4 rounded-3xl " onSubmit={handleSubmit}>
+    <div className="text-center min-h-screen bg-slate-200 rounded-3xl  my-4">
+      <form className="my-6  p-4 rounded-3xl " onSubmit={handleSubmit}>
         <div className="form-control ">
           <label className="label">
             <span className="label-text"> PDF/Doc link</span>
@@ -71,7 +76,7 @@ const form=e.target
             name="note"
             id=""
             type="text"
-            placeholder="write here"
+            placeholder="Type here"
             className="border md:w-1/2 rounded-lg p-3"
             cols="6"
             rows="5"

@@ -5,7 +5,7 @@ const ViewDetails = () => {
   const { _id, title, image, description, level, marks, deadline, creator } =
     card;
   return (
- <div className="bg-slate-200 rounded-2xl my-5">
+ <div className="bg-slate-200 rounded-2xl my-5 min-h-screen">
        <div className="flex gap-4 flex-col md:flex-row my-6">
       <div className="md:w-1/2">
         <img src={image} className="rounded-3xl p-4" alt="" />
@@ -32,7 +32,7 @@ const ViewDetails = () => {
         </p>
 <div >
 <h4 className="font-extrabold text-lg md:text-left">Creator:</h4>
-<div className="flex flex-col  items-start">
+<div className="flex flex-col  md:items-start">
 <p><span className="font-semibold">Name:  </span> {creator.email}</p>
 <p><span className="font-semibold">Email:</span> {creator.name}</p>
 
@@ -43,7 +43,7 @@ const ViewDetails = () => {
     <div>
    <Link to={`/submission-form/${_id}`}> <button
         type="submit"
-        className="btn my-4 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
+        className="btn my-4 md:w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
       >
         Take Assignment
       </button></Link>

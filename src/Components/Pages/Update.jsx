@@ -18,7 +18,7 @@ const Update = () => {
     const form = e.target;
     const title = form.title.value;
     const description = form.description.value;
-    const marks = form.mark.value;
+    const marks = parseInt(form.mark.value);
     const image = form.image.value;
     const level = form.level.value;
     const deadline = startDate;
@@ -54,10 +54,10 @@ const Update = () => {
   return (
     <form
     onSubmit={handleUpdateAssignment}
-    className=" my-8 bg-slate-200 p-4 rounded-2xl border-amber-500 border"
+    className=" my-8 bg-slate-200 p-10 rounded-2xl border-amber-500 border min-h-screen"
   >
     {/* 1st row */}
-    <div className="grid grid-cols-2  gap-6">
+    <div className="grid grid-cols-1  md:grid-cols-2  gap-6">
       <div className="form-control">
         <label className="label">
           <span className="label-text">Title</span>
@@ -86,7 +86,7 @@ const Update = () => {
       </div>
     </div>
     {/* 2ns row */}
-    <div className="grid grid-cols-2  gap-6">
+    <div className="grid grid-cols-1  md:grid-cols-2  gap-6">
       <div className="form-control">
         <label className="label">
           <span className="label-text">Thumbnail Image</span>
@@ -115,7 +115,7 @@ const Update = () => {
       </div>
     </div>
     {/* 3rd row */}
-    <div className="grid grid-cols-2  gap-6">
+    <div className="grid grid-cols-1  md:grid-cols-2  gap-2">
       <div>
         <label className="label">
           <span className="label-text">Difficulty Level</span>
@@ -156,7 +156,7 @@ const Update = () => {
     <div>
       <button
         type="submit"
-        className="btn mt-6 w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
+        className="btn mt-16 md:w-1/4 hover:text-amber-500 hover:bg-slate-700 border-amber-500"
       >
         Update Assignment
       </button>
