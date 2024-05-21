@@ -24,7 +24,6 @@ const Login = () => {
     try {
       const result = await signIn(email, pass);
       console.log(result.user);
-      console.log(result.user);
       const { data } = await axiosSecure.post(`/jwt`,
       {email: result?.user?.email},
     {withCredentials:true}

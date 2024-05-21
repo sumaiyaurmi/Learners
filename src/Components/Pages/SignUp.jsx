@@ -2,9 +2,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import useAxios from "../UseHooks/useAxios";
 
 const Registration = () => {
 
+  const axiosSecure = useAxios();
   const {user, setUser, createUser, signInWithGoogle, updateUserProfile }=useContext(AuthContext)
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,6 +28,11 @@ const Registration = () => {
     try {
       const result = await createUser(email, pass);
       console.log(result.user);
+      const { data } = await axiosSecure.post(`/jwt`,
+      {email: result?.user?.email},
+    {withCredentials:true}
+    );
+      console.log(data)
       await updateUserProfile(name, image);
       // Optimistic Ui Update
       setUser({ ...result?.user, photoURL: image, displayName: name });
@@ -42,7 +49,11 @@ const Registration = () => {
   try {
     const result = await signInWithGoogle();
     console.log(result.user);
-    
+    const { data } = await axiosSecure.post(`/jwt`,
+    {email: result?.user?.email},
+  {withCredentials:true}
+  );
+    console.log(data)    
     toast.success("Sign In Successfully");
     navigate(from);
   } catch (err) {
