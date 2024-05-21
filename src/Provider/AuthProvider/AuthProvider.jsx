@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from 'firebase/auth'
 import auth from '../Firbase/firebase.config'
+import useAxios from '../../Components/UseHooks/useAxios'
 
 export const AuthContext = createContext(null)
 // const auth = getAuth(app)
@@ -17,6 +18,8 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  const axiosSecure = useAxios();
+
 
   const createUser = (email, password) => {
     setLoading(true)
@@ -35,8 +38,8 @@ const AuthProvider = ({ children }) => {
 
   const logOut = async () => {
     setLoading(true)
-  //  const {data}= await axios(`${import.meta.env.VITE_API_URL}/logout`, {withCredentials:true})
-  //  console.log(data)
+   const {data}= await axiosSecure(`/logout`, {withCredentials:true})
+   console.log(data)
     return signOut(auth)
   }
 

@@ -54,8 +54,8 @@ const feedback="Haven't got it yet";
   };
 
   return (
-    <div className="text-center min-h-screen bg-slate-200 rounded-3xl  my-4">
-      <form className="my-6  p-4 rounded-3xl " onSubmit={handleSubmit}>
+    <div className="text-center min-h-screen  rounded-3xl  my-4">
+      <form className="my-6 bg-slate-100 p-4 rounded-3xl " onSubmit={handleSubmit}>
         <div className="form-control ">
           <label className="label">
             <span className="label-text"> PDF/Doc link</span>

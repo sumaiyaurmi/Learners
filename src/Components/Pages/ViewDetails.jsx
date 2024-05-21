@@ -5,7 +5,7 @@ const ViewDetails = () => {
   const { _id, title, image, description, level, marks, deadline, creator } =
     card;
   return (
- <div className="bg-slate-200 rounded-2xl my-5 min-h-screen">
+ <div className=" rounded-2xl my-5 min-h-screen">
        <div className="flex gap-4 flex-col md:flex-row my-6">
       <div className="md:w-1/2">
         <img src={image} className="rounded-3xl p-4" alt="" />
@@ -33,8 +33,8 @@ const ViewDetails = () => {
 <div >
 <h4 className="font-extrabold text-lg md:text-left">Creator:</h4>
 <div className="flex flex-col  md:items-start">
-<p><span className="font-semibold">Name:  </span> {creator.email}</p>
-<p><span className="font-semibold">Email:</span> {creator.name}</p>
+<p><span className="font-semibold">Name:  </span> {creator.name}</p>
+<p><span className="font-semibold">Email:</span> {creator.email}</p>
 
 </div>
     </div> 

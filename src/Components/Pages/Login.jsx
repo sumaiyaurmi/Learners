@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import useAxios from "../UseHooks/useAxios";
 
 const Login = () => {
+  const axiosSecure = useAxios();
 
   const { signIn, signInWithGoogle, user,  } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -22,6 +24,12 @@ const Login = () => {
     try {
       const result = await signIn(email, pass);
       console.log(result.user);
+      console.log(result.user);
+      const { data } = await axiosSecure.post(`/jwt`,
+      {email: result?.user?.email},
+    {withCredentials:true}
+    );
+      console.log(data)
       navigate(from);
 
       toast.success("Sign In Successfully");
@@ -36,6 +44,11 @@ const Login = () => {
  const handleGoogleSignIn = async () => {
   try {
     const result = await signInWithGoogle();
+    const { data } = await axiosSecure.post(`/jwt`,
+    {email: result?.user?.email},
+  {withCredentials:true}
+  );
+    console.log(data)
     console.log(result.user);
    
     toast.success("Sign In Successfully");
