@@ -44,7 +44,7 @@ const Navbar = () => {
   const handleTheme=(e)=>{
 
     if(e.target.checked){
-      setTheme("luxury")
+      setTheme("sunset")
     }
     else{
       setTheme('light')
