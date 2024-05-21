@@ -88,7 +88,7 @@ const Navbar = () => {
         <div className="flex gap-1 items-center">
           <img
             src="https://i.postimg.cc/1z26dS9m/O7DCE10.jpg"
-            className="w-14"
+            className="w-14 rounded-2xl"
             alt=""
           />
           <p className="text-2xl font-medium">
@@ -166,7 +166,8 @@ const Navbar = () => {
           </div>
         ) : (
           <Link to={"/login"}>
-            <button className="btn hover:text-amber-500 hover:bg-slate-700 border-amber-500">
+            <button className="btn hover:text-amber-500 hover:bg-slate-700
+             border-amber-500">
               Login
             </button>
           </Link>

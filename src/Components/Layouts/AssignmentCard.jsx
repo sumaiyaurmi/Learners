@@ -8,8 +8,7 @@ const AssignmentCard = ({ assignment ,assignments,setAssignments}) => {
   const { _id, title, image, description, level, marks, deadline,creator } =assignment;
     const axiosSecure = useAxios();
 const {user}=useContext(AuthContext)
-console.log(creator?.email)
-console.log(user?.email)
+
 
     const handleDelete= id=>{
       if(creator?.email !== user?.email) return (
