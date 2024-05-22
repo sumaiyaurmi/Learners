@@ -20,15 +20,15 @@ const Login = () => {
     const email = form.email.value;
     const pass = form.password.value;
 
-    console.log(email, pass);
+    // console.log(email, pass);
     try {
       const result = await signIn(email, pass);
-      console.log(result.user);
+      // console.log(result.user);
       const { data } = await axiosSecure.post(`/jwt`,
       {email: result?.user?.email},
     {withCredentials:true}
     );
-      console.log(data)
+      // console.log(data)
       navigate(from);
 
       toast.success("Sign In Successfully");
@@ -47,8 +47,8 @@ const Login = () => {
     {email: result?.user?.email},
   {withCredentials:true}
   );
-    console.log(data)
-    console.log(result.user);
+    // console.log(data)
+    // console.log(result.user);
    
     toast.success("Sign In Successfully");
     navigate(from);

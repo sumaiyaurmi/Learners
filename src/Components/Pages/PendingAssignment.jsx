@@ -9,12 +9,12 @@ const PendingAssignment = () => {
     const getData = async () => {
       const { data } = await axiosSecure.get(`/pendings`);
       setPendingAssignments(data);
-      console.log(data);
+      // console.log(data);
     };
     getData();
   }, [axiosSecure]);
 
-  console.log(pendingAssignments);
+  // console.log(pendingAssignments);
 
 
   const handleGiveMark = async (e)=>{
@@ -22,19 +22,19 @@ e.preventDefault()
 const form=e.target;
 const myMark=form.givenMark.value;
 const feedback=form.feedback.value;
-console.log(myMark,feedback, )
+// console.log(myMark,feedback, )
 
   }
 
   const handleStatus=async (id, prevStatus, status)=>{
-    console.log(id, prevStatus, status);
+    // console.log(id, prevStatus, status);
     if (prevStatus === status) return console.log("srb bhi hbe na");
 
     const { data } = await axiosSecure.patch(
       `/submissions/${id}`,
       { status }
     );
-    console.log(data);
+    // console.log(data);
     // const remaining=pendingAssignments.filter(penAssignment => penAssignment._id === !id)
     // setPendingAssignments(remaining)
      }

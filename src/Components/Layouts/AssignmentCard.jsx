@@ -32,7 +32,7 @@ const {user}=useContext(AuthContext)
       .then((result) => {
         if (result.isConfirmed) {
           const {data}= axiosSecure.delete(`/assignments/${id}`)
-  console.log(data)
+  // console.log(data)
   const remaining=assignments.filter(assignment => assignment._id !== id)
   setAssignments(remaining)
           Swal.fire({

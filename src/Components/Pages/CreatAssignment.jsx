@@ -36,11 +36,11 @@ const CreatAssignment = () => {
         image: user?.photURL,
       },
     };
-    console.log(assignmentData);
+    // console.log(assignmentData);
 
     try {
       const { data } = await axiosSecure.post(`/assignments`, assignmentData);
-      console.log(data);
+      // console.log(data);
       toast.success("successfully Created Assignment ");
       navigate("/assignments");
     } catch (err) {

@@ -36,11 +36,11 @@ const Update = () => {
         image: user?.photURL,
       },
     };
-    console.log(assignmentData);
+    // console.log(assignmentData);
 
     try {
       const { data } = await axiosSecure.put(`/assignments/${card._id}`, assignmentData);
-      console.log(data);
+      // console.log(data);
       toast.success("successfully Updated Assignment ");
       navigate("/assignments");
     } catch (err) {

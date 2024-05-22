@@ -13,7 +13,7 @@ useEffect(()=>{
 
 },[])
 
-console.log(cards)
+// console.log(cards)
 
     return (
         <div className='py-10 space-y-3'>

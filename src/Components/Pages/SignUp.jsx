@@ -23,16 +23,16 @@ const Registration = () => {
     const pass = form.password.value;
     const image = form.photo.value;
 
-    console.log(name, email, pass, image);
+    // console.log(name, email, pass, image);
 
     try {
       const result = await createUser(email, pass);
-      console.log(result.user);
+      // console.log(result.user);
       const { data } = await axiosSecure.post(`/jwt`,
       {email: result?.user?.email},
     {withCredentials:true}
     );
-      console.log(data)
+      // console.log(data)
       await updateUserProfile(name, image);
       // Optimistic Ui Update
       setUser({ ...result?.user, photoURL: image, displayName: name });
@@ -48,12 +48,12 @@ const Registration = () => {
  const handleGoogleSignIn = async () => {
   try {
     const result = await signInWithGoogle();
-    console.log(result.user);
+    // console.log(result.user);
     const { data } = await axiosSecure.post(`/jwt`,
     {email: result?.user?.email},
   {withCredentials:true}
   );
-    console.log(data)    
+    // console.log(data)    
     toast.success("Sign In Successfully");
     navigate(from);
   } catch (err) {

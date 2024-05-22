@@ -15,7 +15,7 @@ const [filter,setFilter]=useState('')
     const getData = async () => {
       const { data } = await axiosSecure.get(`/all-assignments?page=${currentPage}&size=${itemsPerPage}&filter=${filter}`);
       setAssignments(data);
-      console.log(data);
+      // console.log(data);
     };
     getData();
     
@@ -33,7 +33,7 @@ const numbarOfPages =Math.ceil(count/itemsPerPage)
   const pages = [...Array(numbarOfPages).keys()].map(element => element +1)
 
 const handlePaginationButton=(value)=>{
-console.log(value)
+// console.log(value)
 setCurrentPage(value)
 
 }

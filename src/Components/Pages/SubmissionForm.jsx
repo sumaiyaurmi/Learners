@@ -42,7 +42,7 @@ const feedback="Haven't got it yet";
 
     try {
         const { data } = await axiosSecure.post(`/submissions`, submissionData);
-        console.log(data);
+        // console.log(data);
         toast.success("successfully Submitted Assignment ");
         navigate("/my-assignment");
         form.reset('')

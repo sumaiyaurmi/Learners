@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
   const logOut = async () => {
     setLoading(true)
    const {data}= await axiosSecure(`/logout`, {withCredentials:true})
-   console.log(data)
+  //  console.log(data)
     return signOut(auth)
   }
 
@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
-      console.log('CurrentUser-->', currentUser)
+      // console.log('CurrentUser-->', currentUser)
       setLoading(false)
     })
     return () => {
