@@ -7,7 +7,7 @@ import useAxios from "../UseHooks/useAxios";
 const Login = () => {
   const axiosSecure = useAxios();
 
-  const { signIn, signInWithGoogle, user,  } = useContext(AuthContext);
+  const { signIn, signInWithGoogle,   } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state || "/";

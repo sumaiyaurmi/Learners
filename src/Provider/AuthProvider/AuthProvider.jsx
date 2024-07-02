@@ -12,7 +12,6 @@ import auth from '../Firbase/firebase.config'
 import useAxios from '../../Components/UseHooks/useAxios'
 
 export const AuthContext = createContext(null)
-// const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 
 const AuthProvider = ({ children }) => {

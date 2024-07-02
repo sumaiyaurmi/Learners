@@ -18,3 +18,4 @@ const {title,description,image}=card
 };
 
 export default FCard;
+

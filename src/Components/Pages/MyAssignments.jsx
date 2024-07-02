@@ -169,15 +169,3 @@ const MyAssignments = () => {
 };
 
 export default MyAssignments;
-
-{
-  /* <div style={{ marginTop: '20px' }}>
-<iframe
-  src={`https://docs.google.com/gview?url=${submission.pdf}&embedded=true`}
-  title="PDF Preview"
-  width="100%"
-  height="500"
-  frameBorder="0"
-></iframe>
-</div> */
-}
